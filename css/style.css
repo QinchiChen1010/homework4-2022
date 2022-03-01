@@ -1,0 +1,139 @@
+body{
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+a:visited{
+    color:#0000ff;
+}
+
+.card header{
+  background-color: #288088;
+  border: 2px solid #45ADAD;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.card ul li header{
+  border: none;
+  border-bottom: 3px solid #50C7C7;
+  text-align: center;
+  background-color: white;
+  padding: 0px;
+}
+.pricing{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  border-radius: 50px 50px 0px 0px;
+  display: flex;
+  flex-basis: 450px;
+  flex-direction: column;
+}
+
+.gallery img{
+  border: 10px solid #50C7C7;
+  margin: 10px;
+  width: 300px;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+}
+
+@keyframes logoanimation {
+  0%   {
+    width:25px;
+    opacity: 0;
+  }
+  100% {
+    width:475px;
+    opacity: 1;
+  }
+}
+#logo{
+  animation-name: logoanimation;
+  animation-duration: 5s;
+}
+
+
+@media screen and (min-width: 900px){
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+        position:fixed;
+        width: 100%;
+        z-index: 9;
+    }
+    .nav_links{
+        display: flex;
+        justify-content: space-between;
+    }
+    main{
+        position: relative;
+        top:100px;
+    }
+    .card header{
+        position:static;
+        z-index:0;
+    }
+    .card{
+        flex-basis: 250px;
+    }
+    footer{
+      margin-top: 15vh;
+    }
+  }
+
+@media print{
+  body{
+    background-image: none;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  nav{
+    width: 100%;
+  }
+  .nav_links{
+        display: flex;
+        justify-content: space-around;
+    }
+
+  .pricing{
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+  }
+  .card{
+    flex-basis: 325px;
+    border: 2px solid #45addd;
+  }
+  .gallery, #gallery{
+    display: none;
+  }
+  .card ul li:nth-child(2)::after{
+    content: "👍";
+  }
+}
+
+
+@media screen and (prefers-reduced-motion: reduce){
+  #logo{
+    animation: none;
+  }
+}
